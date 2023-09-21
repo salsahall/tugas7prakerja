@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Gaya dasar untuk teks */
+  .colorChangingParagraph {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    transition: color 0.5s; /* Efek perubahan warna dalam 0.5 detik */
+  }
+</style>
+</head>
+<body>
+<div class="colorChangingParagraph">
+    <h1>Ini Judul Artikel 1</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates voluptas praesentium debitis enim amet quos laborum suscipit delectus sed, ratione placeat aliquam nulla ut! Dolor repudiandae hic rerum sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt eveniet dignissimos soluta inventore minima numquam odio, eligendi quis quibusdam deserunt distinctio ea. Dolores assumenda omnis quis sequi reiciendis laboriosam.</p>
+</div>
+<div class="colorChangingParagraph"> <h1>Ini Judul Artikel 2</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates voluptas praesentium debitis enim amet quos laborum suscipit delectus sed, ratione placeat aliquam nulla ut! Dolor repudiandae hic rerum sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt eveniet dignissimos soluta inventore minima numquam odio, eligendi quis quibusdam deserunt distinctio ea. Dolores assumenda omnis quis sequi reiciendis laboriosam.</p>
+</div>
+<div class="colorChangingParagraph"> <h1>Ini Judul Artikel 3</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates voluptas praesentium debitis enim amet quos laborum suscipit delectus sed, ratione placeat aliquam nulla ut! Dolor repudiandae hic rerum sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt eveniet dignissimos soluta inventore minima numquam odio, eligendi quis quibusdam deserunt distinctio ea. Dolores assumenda omnis quis sequi reiciendis laboriosam.</p>
+</div>
+
+<script>
+// Fungsi untuk menghasilkan warna acak
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Fungsi untuk mengubah warna teks secara acak pada semua paragraf
+function changeColors() {
+  var paragraphs = document.querySelectorAll('.colorChangingParagraph');
+  paragraphs.forEach(function(paragraph) {
+    var newColor = getRandomColor();
+    paragraph.style.color = newColor;
+  });
+}
+
+// Mengubah warna teks secara berkala setiap 1 detik
+setInterval(changeColors, 1000);
+</script>
+</body>
+</html>
